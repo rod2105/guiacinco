@@ -35,14 +35,13 @@ public class Guiados extends javax.swing.JFrame {
         jListAlfa = new javax.swing.JList<>();
         jButtonLetras = new javax.swing.JButton();
         jTxtLetras = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setViewportView(jListAlfa);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, 220));
 
         jButtonLetras.setText("Ingresar datos");
         jButtonLetras.addActionListener(new java.awt.event.ActionListener() {
@@ -50,7 +49,6 @@ public class Guiados extends javax.swing.JFrame {
                 jButtonLetrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLetras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         jTxtLetras.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -60,7 +58,55 @@ public class Guiados extends javax.swing.JFrame {
                 jTxtLetrasKeyTyped(evt);
             }
         });
-        getContentPane().add(jTxtLetras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 100, -1));
+
+        jButton1.setText("Ordenar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Ingrese letras mayúsculas:");
+
+        jButton2.setText("Limpiar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1)
+                    .addComponent(jTxtLetras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonLetras)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(17, 17, 17)
+                .addComponent(jTxtLetras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonLetras)
+                .addGap(7, 7, 7)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -70,7 +116,11 @@ public class Guiados extends javax.swing.JFrame {
     }//GEN-LAST:event_jTxtLetrasKeyPressed
 
     private void jTxtLetrasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtLetrasKeyTyped
-        if (jTxtLetras.getText().length()==1) {
+        char c = evt.getKeyChar();
+        int carac=(int)evt.getKeyChar();
+        
+        if (Character.isUpperCase(c) && Character.isLetter(c) && jTxtLetras.getText().length()==0) {
+        } else {
             evt.consume();
         }
     }//GEN-LAST:event_jTxtLetrasKeyTyped
@@ -78,8 +128,41 @@ public class Guiados extends javax.swing.JFrame {
     private void jButtonLetrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLetrasActionPerformed
         listamodelo.addElement(jTxtLetras.getText());
         jListAlfa.setModel(listamodelo);
+        jTxtLetras.setText("");
 
     }//GEN-LAST:event_jButtonLetrasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        String elemento1, elemento2;
+        int ascii1, ascii2;
+        char c1, c2;
+        if (listamodelo.getSize()>=1){
+            for(int ite=0 ; ite<listamodelo.getSize()-1 ; ite++){
+                for (int ite2=0 ; ite2<listamodelo.getSize()-1 ; ite2++){
+                    elemento1 = listamodelo.getElementAt(ite2).toString();
+                    
+                    
+                    elemento2 = listamodelo.getElementAt(ite2+1).toString();
+                    ascii1 = (int)elemento1.charAt(0);
+                    ascii2 = (int)elemento2.charAt(0);;
+                    
+                    if (ascii1>ascii2){
+                        listamodelo.setElementAt(elemento2, ite2);
+                        listamodelo.setElementAt(elemento1, ite2+1);
+                    }
+                    
+                }
+            }
+            jListAlfa.setModel(listamodelo);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        listamodelo.removeAllElements();
+        jListAlfa.setModel(listamodelo);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,7 +200,10 @@ public class Guiados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonLetras;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jListAlfa;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTxtLetras;

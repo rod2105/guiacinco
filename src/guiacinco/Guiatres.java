@@ -7,6 +7,7 @@ package guiacinco;
 
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -280,6 +281,12 @@ public class Guiatres extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         
+        if 
+        (txtPantalla.getText().length()==0 || txtBateria.getText().length()==0
+         || txtPrecio.getText().length()==0 || txtTrasera.getText().length()==0 || txtFrontal.getText().length()==0 || txtGarantia.getText().length()==0 || txtRam.getText().length()==0 ||txtRam.getText().length()==0) {
+        JOptionPane.showMessageDialog(null, "Rellene todos los campos");
+    } else {
+              telefono.setPuntaje(0);
         double pantalla = Double.parseDouble(txtPantalla.getText());
         int bateria = Integer.parseInt(txtBateria.getText());
         int precio = Integer.parseInt(txtPrecio.getText());
@@ -297,6 +304,9 @@ public class Guiatres extends javax.swing.JFrame {
         telefono.Ram(Ram);
         
         jTextPane1.setText("El puntaje es:" + telefono.getPuntaje());
+        }
+        
+      
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
