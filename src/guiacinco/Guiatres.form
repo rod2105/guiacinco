@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane2" max="32767" attributes="0"/>
@@ -44,7 +44,7 @@
                                   <Component id="txtPantalla" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="cbMarca" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="108" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="txtRam" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtGarantia" max="32767" attributes="0"/>
@@ -52,23 +52,36 @@
                               </Group>
                               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtFrontal" max="32767" attributes="0"/>
-                                  <Component id="jCheckBoxPrincipal" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jCheckBoxSecundaria" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtTrasera" min="-2" pref="70" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="txtBateria" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtFrontal" max="32767" attributes="0"/>
+                                          <Component id="jCheckBoxPrincipal" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtTrasera" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jCheckBoxSecundaria" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jCheckBoxFlash" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -127,6 +140,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jCheckBoxPrincipal" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jCheckBoxSecundaria" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxFlash" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -134,8 +148,13 @@
                   <Component id="txtFrontal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtTrasera" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="134" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtBateria" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="155" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -205,11 +224,17 @@
     <Component class="javax.swing.JComboBox" name="cbMarca">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Apple"/>
-            <StringItem index="1" value="Samsung"/>
-            <StringItem index="2" value="Huawei"/>
-            <StringItem index="3" value="Motorolla"/>
+          <StringArray count="10">
+            <StringItem index="0" value="Nexus"/>
+            <StringItem index="1" value="Google"/>
+            <StringItem index="2" value="Lenovo"/>
+            <StringItem index="3" value="Huawei"/>
+            <StringItem index="4" value="Sony"/>
+            <StringItem index="5" value="Apple"/>
+            <StringItem index="6" value="Samsung"/>
+            <StringItem index="7" value="Alcatel"/>
+            <StringItem index="8" value="LG"/>
+            <StringItem index="9" value="Xiaomi"/>
           </StringArray>
         </Property>
       </Properties>
@@ -277,5 +302,17 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxFlash">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Flash"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtBateria">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bateria:"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

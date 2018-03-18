@@ -22,6 +22,7 @@ public class Guiatres extends javax.swing.JFrame {
         
         
     }
+    Smartphone telefono = new Smartphone();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +54,9 @@ public class Guiatres extends javax.swing.JFrame {
         jCheckBoxSecundaria = new javax.swing.JCheckBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        jCheckBoxFlash = new javax.swing.JCheckBox();
+        txtBateria = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,7 +100,7 @@ public class Guiatres extends javax.swing.JFrame {
 
         jLabel8.setText("Cámaras:");
 
-        cbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apple", "Samsung", "Huawei", "Motorolla" }));
+        cbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nexus", "Google", "Lenovo", "Huawei", "Sony", "Apple", "Samsung", "Alcatel", "LG", "Xiaomi" }));
 
         txtFrontal.setEditable(false);
         txtFrontal.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +151,10 @@ public class Guiatres extends javax.swing.JFrame {
         jTextPane1.setEditable(false);
         jScrollPane2.setViewportView(jTextPane1);
 
+        jCheckBoxFlash.setText("Flash");
+
+        jLabel9.setText("Bateria:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,25 +179,34 @@ public class Guiatres extends javax.swing.JFrame {
                                     .addComponent(txtPantalla)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(cbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 60, Short.MAX_VALUE))
+                                        .addGap(0, 108, Short.MAX_VALUE))
                                     .addComponent(txtRam)
                                     .addComponent(txtGarantia)
                                     .addComponent(txtPrecio))
                                 .addGap(16, 16, 16))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtFrontal)
-                                    .addComponent(jCheckBoxPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBoxSecundaria)
-                                    .addComponent(txtTrasera, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(100, 100, 100)
+                                        .addComponent(txtBateria))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(26, 26, 26)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtFrontal)
+                                            .addComponent(jCheckBoxPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtTrasera, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jCheckBoxSecundaria)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jCheckBoxFlash)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jButton1)))
                 .addContainerGap())
         );
@@ -232,13 +249,18 @@ public class Guiatres extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jCheckBoxPrincipal)
-                        .addComponent(jCheckBoxSecundaria)))
+                        .addComponent(jCheckBoxSecundaria)
+                        .addComponent(jCheckBoxFlash)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtFrontal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTrasera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -257,10 +279,26 @@ public class Guiatres extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-
-        String marca = (String) cbMarca.getSelectedItem();
-        System.out.println(marca);
-        // TODO add your handling code here:
+        
+        double pantalla = Double.parseDouble(txtPantalla.getText());
+        int bateria = Integer.parseInt(txtBateria.getText());
+        int precio = Integer.parseInt(txtPrecio.getText());
+        double principal = Integer.parseInt(txtTrasera.getText());
+        double frontal = Integer.parseInt(txtFrontal.getText());
+        int garantia = Integer.parseInt(txtGarantia.getText());
+        int Cpu = Integer.parseInt(txtCpu.getText());
+        int Ram = Integer.parseInt(txtRam.getText());
+        telefono.BateriaPantalla(pantalla, bateria);
+        telefono.refMarca(cbMarca.getSelectedIndex());
+        telefono.rangoPrecio(precio);
+        telefono.pixelaje(principal, frontal, jCheckBoxFlash.isSelected());
+        telefono.garantia(garantia);
+        telefono.Cpu(Cpu);
+        telefono.Ram(Ram);
+        
+        jTextPane1.setText("El puntaje es:" + telefono.getPuntaje());
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBoxPrincipalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBoxPrincipalItemStateChanged
@@ -354,6 +392,7 @@ public class Guiatres extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbMarca;
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBoxFlash;
     private javax.swing.JCheckBox jCheckBoxPrincipal;
     private javax.swing.JCheckBox jCheckBoxSecundaria;
     private javax.swing.JLabel jLabel1;
@@ -364,8 +403,10 @@ public class Guiatres extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextField txtBateria;
     private javax.swing.JTextField txtCpu;
     private javax.swing.JTextField txtFrontal;
     private javax.swing.JTextField txtGarantia;
